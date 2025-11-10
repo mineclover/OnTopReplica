@@ -117,6 +117,9 @@
     <Compile Include="CustomResizeDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomPositionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FullscreenFormManager.cs" />
     <Compile Include="FullscreenMode.cs" />
     <Compile Include="GeometryExtensions.cs" />

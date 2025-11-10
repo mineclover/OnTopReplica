@@ -62,6 +62,7 @@
             this.centerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bottomLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bottomRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customPositionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chromeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reduceToIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -348,7 +349,8 @@
             this.topRightToolStripMenuItem,
             this.centerToolStripMenuItem,
             this.bottomLeftToolStripMenuItem,
-            this.bottomRightToolStripMenuItem});
+            this.bottomRightToolStripMenuItem,
+            this.customPositionToolStripMenuItem});
             this.dockToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.pos_null;
             this.dockToolStripMenuItem.Name = "dockToolStripMenuItem";
             this.dockToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
@@ -398,13 +400,20 @@
             this.bottomLeftToolStripMenuItem.Click += new System.EventHandler(this.Menu_Position_BottomLeft);
             // 
             // bottomRightToolStripMenuItem
-            // 
+            //
             this.bottomRightToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.pos_bottomright;
             this.bottomRightToolStripMenuItem.Name = "bottomRightToolStripMenuItem";
             this.bottomRightToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.bottomRightToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuPosBottomRight;
             this.bottomRightToolStripMenuItem.Click += new System.EventHandler(this.Menu_Position_BottomRight);
-            // 
+            //
+            // customPositionToolStripMenuItem
+            //
+            this.customPositionToolStripMenuItem.Name = "customPositionToolStripMenuItem";
+            this.customPositionToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.customPositionToolStripMenuItem.Text = "Custom...";
+            this.customPositionToolStripMenuItem.Click += new System.EventHandler(this.Menu_Position_Custom);
+            //
             // chromeToolStripMenuItem
             // 
             this.chromeToolStripMenuItem.Name = "chromeToolStripMenuItem";
@@ -578,6 +587,7 @@
 		private System.Windows.Forms.ToolStripMenuItem topRightToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem bottomLeftToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bottomRightToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem customPositionToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip menuResize;
 		private System.Windows.Forms.ToolStripMenuItem doubleToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem fitToWindowToolStripMenuItem1;
