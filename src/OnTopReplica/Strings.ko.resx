@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,532 +118,532 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutAuthor" xml:space="preserve">
-    <value>Created by: %.</value>
+    <value>제작자: %.</value>
     <comment>Link % is replaced by string AboutAuthorContent.</comment>
   </data>
   <data name="AboutAuthorContent" xml:space="preserve">
-    <value>Lorenz Cuno Klopfenstein</value>
+    <value></value>
     <comment>Must not be localized. Leave blank in non-default languages.</comment>
   </data>
   <data name="AboutButtonCancelTT" xml:space="preserve">
-    <value>Abort update process.</value>
+    <value>업데이트 프로세스를 중단합니다.</value>
   </data>
   <data name="AboutButtonExpanderTT" xml:space="preserve">
-    <value>Show details about OnTopReplica.</value>
+    <value>OnTopReplica에 대한 세부 정보를 표시합니다.</value>
   </data>
   <data name="AboutButtonResetTT" xml:space="preserve">
-    <value>Reset all OnTopReplica settings.</value>
+    <value>모든 OnTopReplica 설정을 초기화합니다.</value>
   </data>
   <data name="AboutButtonUpdateTT" xml:space="preserve">
-    <value>Update OnTopReplica now.</value>
+    <value>OnTopReplica를 지금 업데이트합니다.</value>
   </data>
   <data name="AboutContribute" xml:space="preserve">
-    <value>Care to contribute to the project? You are welcome to improve available translations, start a new one for your native language or to check out the % from CodePlex.</value>
+    <value>프로젝트에 기여하고 싶으신가요? 기존 번역을 개선하거나, 모국어로 새 번역을 시작하거나, CodePlex에서 %를 확인할 수 있습니다.</value>
   </data>
   <data name="AboutContributeContent" xml:space="preserve">
-    <value>source code</value>
+    <value>소스 코드</value>
   </data>
   <data name="AboutCreditsSources" xml:space="preserve">
-    <value>OnTopReplica is based upon the WindowsFormsAero library and some other libraries and code sources. %.</value>
+    <value>OnTopReplica는 WindowsFormsAero 라이브러리 및 기타 여러 라이브러리와 코드 소스를 기반으로 합니다. %.</value>
     <comment>Link % is replaced by string AboutCreditsSourcesContent.</comment>
   </data>
   <data name="AboutCreditsSourcesContent" xml:space="preserve">
-    <value>Read the full credits</value>
+    <value>전체 크레딧 읽기</value>
   </data>
   <data name="AboutDividerContribute" xml:space="preserve">
-    <value>Contribute</value>
+    <value>기여하기</value>
   </data>
   <data name="AboutDividerCredits" xml:space="preserve">
-    <value>Credits</value>
+    <value>크레딧</value>
   </data>
   <data name="AboutDividerLicense" xml:space="preserve">
-    <value>License</value>
+    <value>라이선스</value>
   </data>
   <data name="AboutDividerUpdates" xml:space="preserve">
-    <value>Updates</value>
+    <value>업데이트</value>
   </data>
   <data name="AboutLicense" xml:space="preserve">
-    <value>The application is licensed under the % license, which meets the terms of the "open-source" definition specified by OSI.</value>
+    <value>이 애플리케이션은 OSI에서 명시한 "오픈 소스" 정의의 조건을 충족하는 % 라이선스를 따릅니다.</value>
   </data>
   <data name="AboutLicenseContent" xml:space="preserve">
-    <value>Microsoft Reciprocal (MS-RL)</value>
+    <value></value>
     <comment>Can be left blank.</comment>
   </data>
   <data name="AboutSlogan" xml:space="preserve">
-    <value>A lightweight, real-time, always on top thumbnail of a window of your choice.</value>
+    <value>선택한 창의 가볍고 실시간이며 항상 위에 표시되는 썸네일입니다.</value>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>About OnTopReplica</value>
+    <value>OnTopReplica 정보</value>
   </data>
   <data name="AboutTranslators" xml:space="preserve">
-    <value>Translators: {0}</value>
+    <value>번역자: {0}</value>
     <comment>{0} translators (do not end with period)</comment>
   </data>
   <data name="AboutTranslatorsContent" xml:space="preserve">
-    <value>Christian Olaechea M., Daniel Zeus.EX, Federico Lorenzo, Goran Brecelj, Jan Romanczyk, Marco Kraxner, Patrik (batupata), Raúl Morillo, René Mihula, Roberto Leiro, Rodrigo Lourenço, Thomas Amundsen, Eric Hoffmann.</value>
+    <value></value>
     <comment>Must not be localized. Leave blank in non-default languages.</comment>
   </data>
   <data name="AboutUpdatesCheckNow" xml:space="preserve">
-    <value>Check now!</value>
+    <value>지금 확인!</value>
   </data>
   <data name="AboutUpdatesDisclaimer" xml:space="preserve">
-    <value>OnTopReplica automatically checks for updates at every start up.</value>
+    <value>OnTopReplica는 시작할 때마다 자동으로 업데이트를 확인합니다.</value>
   </data>
   <data name="AboutVersion" xml:space="preserve">
-    <value>Version {0}</value>
+    <value>버전 {0}</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>OnTopReplica</value>
     <comment>Probably doesn't need localization. :)</comment>
   </data>
   <data name="AskReset" xml:space="preserve">
-    <value>Reset window completely?</value>
+    <value>창을 완전히 초기화하시겠습니까?</value>
   </data>
   <data name="AskResetButtonOk" xml:space="preserve">
-    <value>&amp;Reset
-All settings will be lost.</value>
+    <value>&amp;초기화
+모든 설정이 손실됩니다.</value>
   </data>
   <data name="AskResetContent" xml:space="preserve">
-    <value>Can be used to reset all settings if you lost control over the window or moved it beyond the screen boundary.</value>
+    <value>창을 제어할 수 없게 되었거나 화면 경계 밖으로 이동한 경우 모든 설정을 초기화하는 데 사용할 수 있습니다.</value>
   </data>
   <data name="AskResetTitle" xml:space="preserve">
-    <value>Reset</value>
+    <value>초기화</value>
   </data>
   <data name="AskSettingReset" xml:space="preserve">
-    <value>Reset settings?</value>
+    <value>설정을 초기화하시겠습니까?</value>
   </data>
   <data name="AskSettingResetContent" xml:space="preserve">
-    <value>This will erase all settings of OnTopReplica, returning it to the original state right after installation (all saved information, like stored regions, will be lost).</value>
+    <value>OnTopReplica의 모든 설정이 지워지고 설치 직후의 원래 상태로 돌아갑니다(저장된 영역과 같은 모든 저장된 정보가 손실됩니다).</value>
   </data>
   <data name="AskSettingResetTitle" xml:space="preserve">
-    <value>Reset settings</value>
+    <value>설정 초기화</value>
   </data>
   <data name="ButtonCancel" xml:space="preserve">
-    <value>&amp;Cancel</value>
+    <value>&amp;취소</value>
     <comment>&amp; marks the ALT+[] shortcut</comment>
   </data>
   <data name="DrawRegions" xml:space="preserve">
-    <value>Draw regions using mouse.</value>
+    <value>마우스를 사용하여 영역을 그립니다.</value>
   </data>
   <data name="ErrorDetailButton" xml:space="preserve">
-    <value>Details</value>
+    <value>세부 정보</value>
   </data>
   <data name="ErrorDetailsAero" xml:space="preserve">
-    <value>Details on Windows Aero</value>
+    <value>Windows Aero에 대한 세부 정보</value>
   </data>
   <data name="ErrorDetailsAeroInfo" xml:space="preserve">
-    <value>Windows Aero is only available on Windows Vista Home Premium or higher.</value>
+    <value>Windows Aero는 Windows Vista Home Premium 이상에서만 사용할 수 있습니다.</value>
   </data>
   <data name="ErrorDwmOff" xml:space="preserve">
-    <value>'Desktop Composition' is not enabled.</value>
+    <value>'바탕 화면 컴포지션'이 활성화되지 않았습니다.</value>
   </data>
   <data name="ErrorDwmOffContent" xml:space="preserve">
-    <value>You must enable desktop composition, by selecting 'Windows Aero' as the theme used by Windows.
+    <value>Windows에서 사용하는 테마로 'Windows Aero'를 선택하여 바탕 화면 컴포지션을 활성화해야 합니다.
 
-To do so, right-click on the desktop and click on Personalize.</value>
+이렇게 하려면 바탕 화면을 마우스 오른쪽 버튼으로 클릭하고 개인 설정을 클릭하세요.</value>
   </data>
   <data name="ErrorGenericInfoButton" xml:space="preserve">
-    <value>Error details</value>
+    <value>오류 세부 정보</value>
   </data>
   <data name="ErrorGenericInfoText" xml:space="preserve">
-    <value>Error: </value>
+    <value>오류: </value>
   </data>
   <data name="ErrorGenericThumbnailHandleError" xml:space="preserve">
-    <value>It appears that the selected window has been closed or is not valid anymore.</value>
+    <value>선택한 창이 닫혔거나 더 이상 유효하지 않은 것 같습니다.</value>
   </data>
   <data name="ErrorGenericTitle" xml:space="preserve">
-    <value>Error</value>
+    <value>오류</value>
   </data>
   <data name="ErrorNoDwm" xml:space="preserve">
-    <value>Desktop Composition' is not supported on your Operating System.
-You must run this application on Windows Vista Home Premium or better.</value>
+    <value>바탕 화면 컴포지션'이 운영 체제에서 지원되지 않습니다.
+이 애플리케이션은 Windows Vista Home Premium 이상에서 실행해야 합니다.</value>
   </data>
   <data name="ErrorNoDwmTitle" xml:space="preserve">
-    <value>Desktop Composition unsupported</value>
+    <value>바탕 화면 컴포지션 지원 안 함</value>
   </data>
   <data name="ErrorNoThumbnail" xml:space="preserve">
-    <value>No thumbnail loaded.</value>
+    <value>썸네일이 로드되지 않았습니다.</value>
   </data>
   <data name="ErrorUnableToCreateThumbnail" xml:space="preserve">
-    <value>Unable to create thumbnail</value>
+    <value>썸네일을 만들 수 없습니다</value>
   </data>
   <data name="ErrorUnableToFit" xml:space="preserve">
-    <value>Unable to fit window.</value>
+    <value>창을 맞출 수 없습니다.</value>
   </data>
   <data name="ErrorUpdate" xml:space="preserve">
-    <value>Unable to check for updates.</value>
+    <value>업데이트를 확인할 수 없습니다.</value>
   </data>
   <data name="ErrorUpdateContent" xml:space="preserve">
-    <value>It appears that OnTopReplica wasn't installed using 'ClickOnce'. You'll have to update manually (visit &lt;a href="http://ontopreplica.codeplex.com"&gt;OnTopReplica's homepage&lt;/a&gt;).</value>
+    <value>OnTopReplica가 'ClickOnce'를 사용하여 설치되지 않은 것 같습니다. 수동으로 업데이트해야 합니다(&lt;a href="http://ontopreplica.codeplex.com"&gt;OnTopReplica 홈페이지&lt;/a&gt; 방문).</value>
   </data>
   <data name="ErrorUpdateContentGeneric" xml:space="preserve">
-    <value>OnTopReplica was unable to check whether an updated version is available. Make sure you are connected to the Internet. If you are, the website may be temporarily down.</value>
+    <value>OnTopReplica가 업데이트된 버전을 사용할 수 있는지 확인할 수 없습니다. 인터넷에 연결되어 있는지 확인하세요. 연결되어 있다면 웹사이트가 일시적으로 다운되었을 수 있습니다.</value>
   </data>
   <data name="FullscreenMode" xml:space="preserve">
-    <value>Mode</value>
+    <value>모드</value>
   </data>
   <data name="FullscreenModeAlwaysOnTop" xml:space="preserve">
-    <value>Always on top</value>
+    <value>항상 위에 표시</value>
   </data>
   <data name="FullscreenModeAlwaysOnTopTT" xml:space="preserve">
-    <value>Forces OnTopReplica to stay always on top.</value>
+    <value>OnTopReplica가 항상 위에 표시되도록 합니다.</value>
   </data>
   <data name="FullscreenModeClickThrough" xml:space="preserve">
-    <value>Click through</value>
+    <value>클릭 통과</value>
   </data>
   <data name="FullscreenModeClickThroughTT" xml:space="preserve">
-    <value>OnTopReplica will behave like a transparent overlay that lets your clicks through to the windows below.</value>
+    <value>OnTopReplica가 투명한 오버레이처럼 작동하여 클릭이 아래 창으로 통과되도록 합니다.</value>
   </data>
   <data name="FullscreenModeNormal" xml:space="preserve">
-    <value>Standard</value>
+    <value>표준</value>
   </data>
   <data name="FullscreenModeNormalTT" xml:space="preserve">
-    <value>Behaves like an ordinary window. You can bring other windows above OnTopReplica.</value>
+    <value>일반 창처럼 작동합니다. OnTopReplica 위에 다른 창을 표시할 수 있습니다.</value>
   </data>
   <data name="FullscreenTitle" xml:space="preserve">
-    <value>OnTopReplica fullscreen</value>
+    <value>OnTopReplica 전체 화면</value>
   </data>
   <data name="GroupSwitchModeDisableButton" xml:space="preserve">
-    <value>Disable</value>
+    <value>비활성화</value>
   </data>
   <data name="GroupSwitchModeEnableButton" xml:space="preserve">
-    <value>Enable Group mode</value>
+    <value>그룹 모드 활성화</value>
   </data>
   <data name="GroupSwitchModeStatusDisabled" xml:space="preserve">
-    <value>Select multiple windows to enable.</value>
+    <value>활성화하려면 여러 창을 선택하세요.</value>
   </data>
   <data name="GroupSwitchModeStatusEnabled" xml:space="preserve">
-    <value>Group switch mode is enabled.</value>
+    <value>그룹 전환 모드가 활성화되었습니다.</value>
   </data>
   <data name="GroupSwitchModeTitle" xml:space="preserve">
-    <value>Group switch mode:</value>
+    <value>그룹 전환 모드:</value>
   </data>
   <data name="GroupSwitchModeWindows" xml:space="preserve">
-    <value>Windows</value>
+    <value>창</value>
     <comment>Column Header of list, simply refers to available windows to be cloned</comment>
   </data>
   <data name="Homepage" xml:space="preserve">
-    <value>Homepage: www.codeplex.com/ontopreplica.</value>
+    <value>홈페이지: www.codeplex.com/ontopreplica.</value>
   </data>
   <data name="InfoClickForwarding" xml:space="preserve">
-    <value>Do you want to enable "click forwarding"?</value>
+    <value>"클릭 전달"을 활성화하시겠습니까?</value>
   </data>
   <data name="InfoClickForwardingContent" xml:space="preserve">
-    <value>If this mode is enabled, OnTopReplica will forward all left mouse clicks to the window that is being cloned (this will allow you to do basic mouse operations on the cloned window without having to activate it).
+    <value>이 모드가 활성화되면 OnTopReplica는 모든 마우스 왼쪽 클릭을 복제 중인 창으로 전달합니다(복제된 창을 활성화하지 않고도 기본 마우스 작업을 수행할 수 있습니다).
 
-To exit this mode, push ESC.</value>
+이 모드를 종료하려면 ESC를 누르세요.</value>
   </data>
   <data name="InfoClickForwardingTitle" xml:space="preserve">
-    <value>Click forwarding</value>
+    <value>클릭 전달</value>
   </data>
   <data name="InfoClickThrough" xml:space="preserve">
-    <value>Enable Click-Through mode?</value>
+    <value>클릭 통과 모드를 활성화하시겠습니까?</value>
   </data>
   <data name="InfoClickThroughDetails" xml:space="preserve">
-    <value>Click-through only works if it has been enabled in the Resize submenu and if the window is semi-transparent.</value>
+    <value>클릭 통과는 크기 조정 하위 메뉴에서 활성화되어 있고 창이 반투명인 경우에만 작동합니다.</value>
   </data>
   <data name="InfoClickThroughInformation" xml:space="preserve">
-    <value>In this mode the fullscreen window will behave as a partially transparent overlay, allowing you to click on the other windows behind it.
+    <value>이 모드에서 전체 화면 창은 부분적으로 투명한 오버레이처럼 작동하여 뒤에 있는 다른 창을 클릭할 수 있습니다.
 
-To return to normal mode anytime, activate OnTopReplica by clicking on the task bar (or the tray icon).</value>
+언제든지 일반 모드로 돌아가려면 작업 표시줄(또는 트레이 아이콘)을 클릭하여 OnTopReplica를 활성화하세요.</value>
   </data>
   <data name="InfoClickThroughNo" xml:space="preserve">
-    <value>No, thank you.
-You can enable click-through later</value>
+    <value>아니요, 괜찮습니다.
+나중에 클릭 통과를 활성화할 수 있습니다</value>
   </data>
   <data name="InfoClickThroughOk" xml:space="preserve">
-    <value>Use Click-Through</value>
+    <value>클릭 통과 사용</value>
   </data>
   <data name="InfoClickThroughTitle" xml:space="preserve">
-    <value>Click-Through mode</value>
+    <value>클릭 통과 모드</value>
   </data>
   <data name="InfoUpdated" xml:space="preserve">
-    <value>OnTopReplica has been updated.</value>
+    <value>OnTopReplica가 업데이트되었습니다.</value>
   </data>
   <data name="InfoUpdatedContent" xml:space="preserve">
-    <value>In order to use the updated version of OnTopReplica you'll have to restart the application.</value>
+    <value>업데이트된 버전의 OnTopReplica를 사용하려면 애플리케이션을 다시 시작해야 합니다.</value>
   </data>
   <data name="InfoUpdatedTitle" xml:space="preserve">
-    <value>Update successful</value>
+    <value>업데이트 성공</value>
   </data>
   <data name="InfoUpToDate" xml:space="preserve">
-    <value>OnTopReplica is up to date.</value>
+    <value>OnTopReplica가 최신 상태입니다.</value>
   </data>
   <data name="InfoUpToDateTitle" xml:space="preserve">
-    <value>No update available</value>
+    <value>사용 가능한 업데이트 없음</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>언어</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>About...</value>
+    <value>정보...</value>
   </data>
   <data name="MenuAboutTT" xml:space="preserve">
-    <value>Hides the main window and displays the "about" box.</value>
+    <value>기본 창을 숨기고 "정보" 상자를 표시합니다.</value>
   </data>
   <data name="MenuAdvanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>고급</value>
   </data>
   <data name="MenuChrome" xml:space="preserve">
-    <value>Show window border</value>
+    <value>창 테두리 표시</value>
   </data>
   <data name="MenuChromeTT" xml:space="preserve">
-    <value>Toggles the display of the window border.</value>
+    <value>창 테두리 표시를 토글합니다.</value>
   </data>
   <data name="MenuClickForwarding" xml:space="preserve">
-    <value>Enable Click forwarding</value>
+    <value>클릭 전달 활성화</value>
   </data>
   <data name="MenuClickForwardingTT" xml:space="preserve">
-    <value>Enable "click forwarding" to the cloned window.</value>
+    <value>복제된 창으로 "클릭 전달"을 활성화합니다.</value>
   </data>
   <data name="MenuClickThrough" xml:space="preserve">
-    <value>Enable Click-Through</value>
+    <value>클릭 통과 활성화</value>
   </data>
   <data name="MenuClickThroughTT" xml:space="preserve">
-    <value>OnTopReplica will behave like a transparent overlay that lets your clicks through to the windows below.</value>
+    <value>OnTopReplica가 투명한 오버레이처럼 작동하여 클릭이 아래 창으로 통과되도록 합니다.</value>
   </data>
   <data name="MenuClose" xml:space="preserve">
-    <value>Close</value>
+    <value>닫기</value>
   </data>
   <data name="MenuCloseTT" xml:space="preserve">
-    <value>Closes OnTopReplica.</value>
+    <value>OnTopReplica를 닫습니다.</value>
   </data>
   <data name="MenuFitDouble" xml:space="preserve">
-    <value>2:1 Double</value>
+    <value>2:1 두 배</value>
   </data>
   <data name="MenuFitFullscreen" xml:space="preserve">
-    <value>Fullscreen</value>
+    <value>전체 화면</value>
   </data>
   <data name="MenuFitHalf" xml:space="preserve">
-    <value>1:2 Half</value>
+    <value>1:2 절반</value>
   </data>
   <data name="MenuFitOriginal" xml:space="preserve">
-    <value>1:1 Fit to window</value>
+    <value>1:1 창에 맞춤</value>
   </data>
   <data name="MenuFitQuarter" xml:space="preserve">
-    <value>1:4 Quarter</value>
+    <value>1:4 1/4 크기</value>
   </data>
   <data name="MenuGroupSwitch" xml:space="preserve">
-    <value>Group Switch mode</value>
+    <value>그룹 전환 모드</value>
   </data>
   <data name="MenuGroupSwitchTT" xml:space="preserve">
-    <value>OnTopReplica will automatically clone a window from an user defined group, switching to the one least recently activated to the foreground.</value>
+    <value>OnTopReplica는 사용자 정의 그룹의 창을 자동으로 복제하며, 가장 최근에 활성화되지 않은 창으로 전환합니다.</value>
   </data>
   <data name="MenuOp100" xml:space="preserve">
-    <value>100% (opaque)</value>
+    <value>100% (불투명)</value>
   </data>
   <data name="MenuOp100TT" xml:space="preserve">
-    <value>Sets OnTopReplica to be completely opaque.</value>
+    <value>OnTopReplica를 완전히 불투명하게 설정합니다.</value>
   </data>
   <data name="MenuOp25" xml:space="preserve">
     <value>25%</value>
   </data>
   <data name="MenuOp25TT" xml:space="preserve">
-    <value>Sets OnTopReplica to 25% opacity.</value>
+    <value>OnTopReplica를 25% 불투명도로 설정합니다.</value>
   </data>
   <data name="MenuOp50" xml:space="preserve">
     <value>50%</value>
   </data>
   <data name="MenuOp50TT" xml:space="preserve">
-    <value>Sets OnTopReplica to 50% opacity.</value>
+    <value>OnTopReplica를 50% 불투명도로 설정합니다.</value>
   </data>
   <data name="MenuOp75" xml:space="preserve">
     <value>75%</value>
   </data>
   <data name="MenuOp75TT" xml:space="preserve">
-    <value>Sets OnTopReplica to 75% opacity.</value>
+    <value>OnTopReplica를 75% 불투명도로 설정합니다.</value>
   </data>
   <data name="MenuOpacity" xml:space="preserve">
-    <value>Opacity</value>
+    <value>불투명도</value>
   </data>
   <data name="MenuOpen" xml:space="preserve">
-    <value>Open</value>
+    <value>열기</value>
   </data>
   <data name="MenuOpenTT" xml:space="preserve">
-    <value>Displays OnTopReplica.</value>
+    <value>OnTopReplica를 표시합니다.</value>
   </data>
   <data name="MenuPosBottomLeft" xml:space="preserve">
-    <value>Bottom Left</value>
+    <value>왼쪽 아래</value>
   </data>
   <data name="MenuPosBottomRight" xml:space="preserve">
-    <value>Bottom Right</value>
+    <value>오른쪽 아래</value>
   </data>
   <data name="MenuPosCenter" xml:space="preserve">
-    <value>Center</value>
+    <value>가운데</value>
   </data>
   <data name="MenuPosDisabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>비활성화됨</value>
   </data>
   <data name="MenuPosition" xml:space="preserve">
-    <value>Position lock</value>
+    <value>위치 잠금</value>
   </data>
   <data name="MenuPositionTT" xml:space="preserve">
-    <value>Automatically position OnTopReplica on the current screen.</value>
+    <value>현재 화면에서 OnTopReplica의 위치를 자동으로 지정합니다.</value>
   </data>
   <data name="MenuPosTopLeft" xml:space="preserve">
-    <value>Top Left</value>
+    <value>왼쪽 위</value>
   </data>
   <data name="MenuPosTopRight" xml:space="preserve">
-    <value>Top Right</value>
+    <value>오른쪽 위</value>
   </data>
   <data name="MenuQuitFullscreen" xml:space="preserve">
-    <value>Quit fullscreen mode</value>
+    <value>전체 화면 모드 종료</value>
   </data>
   <data name="MenuRecall" xml:space="preserve">
-    <value>Recall last position and size</value>
+    <value>마지막 위치 및 크기 기억</value>
   </data>
   <data name="MenuRecallTT" xml:space="preserve">
-    <value>Toggles whether OnTopReplica should store its last position and size and use them when it is restarted.</value>
+    <value>OnTopReplica가 마지막 위치와 크기를 저장하고 다시 시작할 때 사용할지 여부를 토글합니다.</value>
   </data>
   <data name="MenuReduce" xml:space="preserve">
-    <value>Minimize</value>
+    <value>최소화</value>
   </data>
   <data name="MenuReduceTT" xml:space="preserve">
-    <value>Minimizes OnTopReplica to the task bar (or the tray).</value>
+    <value>OnTopReplica를 작업 표시줄(또는 트레이)로 최소화합니다.</value>
   </data>
   <data name="MenuRegion" xml:space="preserve">
-    <value>Select region...</value>
+    <value>영역 선택...</value>
   </data>
   <data name="MenuRegionTT" xml:space="preserve">
-    <value>Switches to "region mode", that allows you to select a limited region of the source's window as thumbnail.</value>
+    <value>소스 창의 제한된 영역을 썸네일로 선택할 수 있는 "영역 모드"로 전환합니다.</value>
   </data>
   <data name="MenuReset" xml:space="preserve">
-    <value>Reset window</value>
+    <value>창 초기화</value>
   </data>
   <data name="MenuResetTT" xml:space="preserve">
-    <value>Resets OnTopReplica settings and its main window.</value>
+    <value>OnTopReplica 설정과 기본 창을 초기화합니다.</value>
   </data>
   <data name="MenuResize" xml:space="preserve">
-    <value>Resize</value>
+    <value>크기 조정</value>
   </data>
   <data name="MenuCtxLockResize" xml:space="preserve">
-    <value>Lock window size</value>
+    <value>창 크기 고정</value>
   </data>
   <data name="MenuCtxSetPosition" xml:space="preserve">
-    <value>Set position...</value>
+    <value>위치 설정...</value>
   </data>
   <data name="MenuCtxOk" xml:space="preserve">
-    <value>OK</value>
+    <value>확인</value>
   </data>
   <data name="MenuCtxCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>취소</value>
   </data>
   <data name="MenuCtxSetSize" xml:space="preserve">
-    <value>Set size...</value>
+    <value>크기 설정...</value>
   </data>
   <data name="MenuCtxWidth" xml:space="preserve">
-    <value>Width:</value>
+    <value>너비:</value>
   </data>
   <data name="MenuCtxHeight" xml:space="preserve">
-    <value>Height:</value>
+    <value>높이:</value>
   </data>
   <data name="MenuCtxSetScale" xml:space="preserve">
-    <value>Set scale...</value>
+    <value>배율 설정...</value>
   </data>
   <data name="MenuCtxScale" xml:space="preserve">
-    <value>Scale:</value>
+    <value>배율:</value>
   </data>
   <data name="MenuRestoreLast" xml:space="preserve">
-    <value>Restore last cloned window</value>
+    <value>마지막으로 복제한 창 복원</value>
   </data>
   <data name="MenuRestoreLastTT" xml:space="preserve">
-    <value>When enabled, OnTopReplica will attempt to restore the last cloned window on start up.</value>
+    <value>활성화되면 OnTopReplica가 시작 시 마지막으로 복제한 창을 복원하려고 시도합니다.</value>
   </data>
   <data name="MenuSettings" xml:space="preserve">
-    <value>Settings...</value>
+    <value>설정...</value>
   </data>
   <data name="MenuSettingsTT" xml:space="preserve">
-    <value>Displays the settings panel.</value>
+    <value>설정 패널을 표시합니다.</value>
   </data>
   <data name="MenuSwitch" xml:space="preserve">
-    <value>Switch to window</value>
+    <value>창으로 전환</value>
   </data>
   <data name="MenuSwitchTT" xml:space="preserve">
-    <value>Switches to the source window and hides OnTopReplica.</value>
+    <value>소스 창으로 전환하고 OnTopReplica를 숨깁니다.</value>
   </data>
   <data name="MenuWindows" xml:space="preserve">
-    <value>Select window</value>
+    <value>창 선택</value>
   </data>
   <data name="MenuWindowsNone" xml:space="preserve">
-    <value>- none -</value>
+    <value>- 없음 -</value>
   </data>
   <data name="MenuWindowsTT" xml:space="preserve">
-    <value>Displays a list of window you can select as thumbnail source.</value>
+    <value>썸네일 소스로 선택할 수 있는 창 목록을 표시합니다.</value>
   </data>
   <data name="MenuWindowsWholeRegion" xml:space="preserve">
-    <value>- whole -</value>
+    <value>- 전체 -</value>
   </data>
   <data name="RegionsCurrentRegion" xml:space="preserve">
-    <value>Current region:</value>
+    <value>현재 영역:</value>
   </data>
   <data name="RegionsDeleteButton" xml:space="preserve">
-    <value>Delete</value>
+    <value>삭제</value>
   </data>
   <data name="RegionsDoneButton" xml:space="preserve">
-    <value>Done</value>
+    <value>완료</value>
   </data>
   <data name="RegionsHeight" xml:space="preserve">
-    <value>Height</value>
+    <value>높이</value>
   </data>
   <data name="RegionsResetButton" xml:space="preserve">
-    <value>Reset</value>
+    <value>초기화</value>
   </data>
   <data name="RegionsSaveButton" xml:space="preserve">
-    <value>Save</value>
+    <value>저장</value>
   </data>
   <data name="RegionsStoredRegions" xml:space="preserve">
-    <value>Stored regions</value>
+    <value>저장된 영역</value>
   </data>
   <data name="RegionsTitle" xml:space="preserve">
-    <value>Regions:</value>
+    <value>영역:</value>
   </data>
   <data name="RegionsWidth" xml:space="preserve">
-    <value>Width</value>
+    <value>너비</value>
   </data>
   <data name="RightClick" xml:space="preserve">
-    <value>Right-click here to start...</value>
+    <value>시작하려면 여기를 마우스 오른쪽 버튼으로 클릭하세요...</value>
   </data>
   <data name="SettingsHotKeyClone" xml:space="preserve">
-    <value>Clone current window</value>
+    <value>현재 창 복제</value>
   </data>
   <data name="SettingsHotKeyDescription" xml:space="preserve">
-    <value>These system-wide shortcuts can also be used when OnTopReplica is not in focus.</value>
+    <value>이러한 시스템 전체 단축키는 OnTopReplica가 포커스에 있지 않을 때도 사용할 수 있습니다.</value>
   </data>
   <data name="SettingsHotKeyShowHide" xml:space="preserve">
-    <value>Show/Hide</value>
+    <value>표시/숨기기</value>
   </data>
   <data name="SettingsHotKeyTitle" xml:space="preserve">
-    <value>Hot keys:</value>
+    <value>단축키:</value>
   </data>
   <data name="SettingsLanguageTitle" xml:space="preserve">
-    <value>Language:</value>
+    <value>언어:</value>
   </data>
   <data name="SettingsRestartRequired" xml:space="preserve">
-    <value>Requires a restart.</value>
+    <value>다시 시작해야 합니다.</value>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>Settings</value>
+    <value>설정</value>
   </data>
   <data name="UpdateAvailableCommandCancel" xml:space="preserve">
-    <value>Cancel update
-OnTopReplica will prompt you the next time it is started.</value>
+    <value>업데이트 취소
+OnTopReplica가 다음에 시작될 때 다시 메시지를 표시합니다.</value>
   </data>
   <data name="UpdateAvailableCommandOk" xml:space="preserve">
-    <value>Download
-Install OnTopReplica {0}.</value>
+    <value>다운로드
+OnTopReplica {0}을(를) 설치합니다.</value>
   </data>
   <data name="UpdateAvailableContent" xml:space="preserve">
-    <value>The new version can be downloaded and installed from the official website.</value>
+    <value>새 버전은 공식 웹사이트에서 다운로드하여 설치할 수 있습니다.</value>
   </data>
   <data name="UpdateAvailableExpanded" xml:space="preserve">
-    <value>Installed version: {0}
-Available version: {1}</value>
+    <value>설치된 버전: {0}
+사용 가능한 버전: {1}</value>
   </data>
   <data name="UpdateAvailableInstruction" xml:space="preserve">
-    <value>Version {0} available</value>
+    <value>버전 {0} 사용 가능</value>
   </data>
   <data name="UpdateDownloadingContent" xml:space="preserve">
-    <value>{0}/{1} bytes downloaded.</value>
+    <value>{0}/{1} 바이트 다운로드됨.</value>
     <comment>{0} downloaded bytes {1} total bytes
 {0}  bytes geladen von {1} bytes gesamt
 {0} downloaded bytes {1} total bytes
@@ -651,45 +651,45 @@ Available version: {1}</value>
 {0} downloaded bytes {1} total bytes</comment>
   </data>
   <data name="UpdateDownloadingInstruction" xml:space="preserve">
-    <value>Downloading...</value>
+    <value>다운로드 중...</value>
   </data>
   <data name="UpdateInfoContent" xml:space="preserve">
-    <value>The latest version of OnTopReplica is already installed. The program automatically checks for updates at every start.
+    <value>OnTopReplica의 최신 버전이 이미 설치되어 있습니다. 프로그램은 시작할 때마다 자동으로 업데이트를 확인합니다.
 
-You can keep up to date about OnTopReplica's development, suggest improvements and new features by &lt;a href="website"&gt;visiting the official website&lt;/a&gt;.</value>
+OnTopReplica의 개발 소식을 확인하고 개선 사항과 새 기능을 제안하려면 &lt;a href="website"&gt;공식 웹사이트를 방문&lt;/a&gt;하세요.</value>
     <comment>The website link should be enclosed in &lt;a href="website"&gt;&lt;/a&gt; tags.</comment>
   </data>
   <data name="UpdateInfoFooter" xml:space="preserve">
-    <value>Latest stable version released on {0}.</value>
+    <value>최신 안정 버전이 {0}에 릴리스되었습니다.</value>
     <comment>{0} last version release date</comment>
   </data>
   <data name="UpdateInfoInstruction" xml:space="preserve">
-    <value>OnTopReplica is up to date</value>
+    <value>OnTopReplica가 최신 상태입니다</value>
   </data>
   <data name="UpdateReadyCommandOk" xml:space="preserve">
-    <value>Install
-OnTopReplica will be closed and the update installed.</value>
+    <value>설치
+OnTopReplica가 닫히고 업데이트가 설치됩니다.</value>
   </data>
   <data name="UpdateReadyContent" xml:space="preserve">
-    <value>OnTopReplica version {0} is ready to be installed on your computer.</value>
+    <value>OnTopReplica 버전 {0}을(를) 컴퓨터에 설치할 준비가 되었습니다.</value>
   </data>
   <data name="UpdateReadyInstruction" xml:space="preserve">
-    <value>Update ready</value>
+    <value>업데이트 준비됨</value>
   </data>
   <data name="UpdateTitle" xml:space="preserve">
-    <value>OnTopReplica updates</value>
+    <value>OnTopReplica 업데이트</value>
   </data>
   <data name="RegionsBottom" xml:space="preserve">
-    <value>Bottom</value>
+    <value>아래</value>
   </data>
   <data name="RegionsLeft" xml:space="preserve">
-    <value>Left</value>
+    <value>왼쪽</value>
   </data>
   <data name="RegionsRight" xml:space="preserve">
-    <value>Right</value>
+    <value>오른쪽</value>
   </data>
   <data name="RegionsTop" xml:space="preserve">
-    <value>Top</value>
+    <value>위</value>
   </data>
   <data name="RegionsX" xml:space="preserve">
     <value>X</value>

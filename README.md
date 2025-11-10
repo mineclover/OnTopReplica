@@ -29,6 +29,10 @@ Very useful for monitoring background processes, wrangling with complex multi-wi
 
 Get the [latest version](https://github.com/LorenzCK/OnTopReplica/releases) from the releases section as an MSI&nbsp;installer.
 
+## Building from Source
+
+See [BUILD.md](BUILD.md) for detailed build instructions and environment setup.
+
 ## Contributions
 
 …are very welcome. Fork away! 🍽️

@@ -76,6 +76,11 @@
             this.menuModeAllScreensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enableClickthroughToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lockResizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.setPositionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuContext.SuspendLayout();
             this.menuWindows.SuspendLayout();
             this.menuOpacity.SuspendLayout();
@@ -271,6 +276,9 @@
             this.toolStripSeparator3,
             this.fullscreenToolStripMenuItem1,
             this.toolStripSeparator2,
+            this.setSizeToolStripMenuItem,
+            this.setScaleToolStripMenuItem,
+            this.lockResizeToolStripMenuItem,
             this.restorePositionAndSizeToolStripMenuItem});
             this.menuResize.Name = "menuResize";
             this.menuResize.OwnerItem = this.resizeToolStripMenuItem;
@@ -339,7 +347,9 @@
             this.topRightToolStripMenuItem,
             this.centerToolStripMenuItem,
             this.bottomLeftToolStripMenuItem,
-            this.bottomRightToolStripMenuItem});
+            this.bottomRightToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.setPositionToolStripMenuItem});
             this.dockToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.pos_null;
             this.dockToolStripMenuItem.Name = "dockToolStripMenuItem";
             this.dockToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
@@ -389,13 +399,47 @@
             this.bottomLeftToolStripMenuItem.Click += new System.EventHandler(this.Menu_Position_BottomLeft);
             // 
             // bottomRightToolStripMenuItem
-            // 
+            //
             this.bottomRightToolStripMenuItem.Image = global::OnTopReplica.Properties.Resources.pos_bottomright;
             this.bottomRightToolStripMenuItem.Name = "bottomRightToolStripMenuItem";
             this.bottomRightToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.bottomRightToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuPosBottomRight;
             this.bottomRightToolStripMenuItem.Click += new System.EventHandler(this.Menu_Position_BottomRight);
-            // 
+            //
+            // toolStripSeparator4
+            //
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(142, 6);
+            //
+            // setPositionToolStripMenuItem
+            //
+            this.setPositionToolStripMenuItem.Name = "setPositionToolStripMenuItem";
+            this.setPositionToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.setPositionToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuCtxSetPosition;
+            this.setPositionToolStripMenuItem.Click += new System.EventHandler(this.Menu_Position_SetPosition);
+            //
+            // setSizeToolStripMenuItem
+            //
+            this.setSizeToolStripMenuItem.Name = "setSizeToolStripMenuItem";
+            this.setSizeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.setSizeToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuCtxSetSize;
+            this.setSizeToolStripMenuItem.Click += new System.EventHandler(this.Menu_Resize_SetSize);
+            //
+            // setScaleToolStripMenuItem
+            //
+            this.setScaleToolStripMenuItem.Name = "setScaleToolStripMenuItem";
+            this.setScaleToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.setScaleToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuCtxSetScale;
+            this.setScaleToolStripMenuItem.Click += new System.EventHandler(this.Menu_Resize_SetScale);
+            //
+            // lockResizeToolStripMenuItem
+            //
+            this.lockResizeToolStripMenuItem.CheckOnClick = true;
+            this.lockResizeToolStripMenuItem.Name = "lockResizeToolStripMenuItem";
+            this.lockResizeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.lockResizeToolStripMenuItem.Text = global::OnTopReplica.Strings.MenuCtxLockResize;
+            this.lockResizeToolStripMenuItem.Click += new System.EventHandler(this.Menu_Resize_LockResize);
+            //
             // chromeToolStripMenuItem
             // 
             this.chromeToolStripMenuItem.Name = "chromeToolStripMenuItem";
@@ -596,6 +640,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuModeStandardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuModeFullscreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuModeAllScreensToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lockResizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setSizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setScaleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem setPositionToolStripMenuItem;
     }
 }
 

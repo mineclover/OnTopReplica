@@ -1211,7 +1211,88 @@ namespace OnTopReplica {
                 return ResourceManager.GetString("MenuResize", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   查詢類似 Lock window size 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxLockResize {
+            get {
+                return ResourceManager.GetString("MenuCtxLockResize", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Set position... 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxSetPosition {
+            get {
+                return ResourceManager.GetString("MenuCtxSetPosition", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 OK 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxOk {
+            get {
+                return ResourceManager.GetString("MenuCtxOk", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Cancel 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxCancel {
+            get {
+                return ResourceManager.GetString("MenuCtxCancel", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Set size... 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxSetSize {
+            get {
+                return ResourceManager.GetString("MenuCtxSetSize", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Width: 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxWidth {
+            get {
+                return ResourceManager.GetString("MenuCtxWidth", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Height: 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxHeight {
+            get {
+                return ResourceManager.GetString("MenuCtxHeight", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Set scale... 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxSetScale {
+            get {
+                return ResourceManager.GetString("MenuCtxSetScale", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   查詢類似 Scale: 的當地語系化字串。
+        /// </summary>
+        internal static string MenuCtxScale {
+            get {
+                return ResourceManager.GetString("MenuCtxScale", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   查詢類似 Restore last cloned window 的當地語系化字串。
         /// </summary>

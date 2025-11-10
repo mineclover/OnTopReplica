@@ -416,6 +416,12 @@ namespace OnTopReplica {
             }
         }
 
+        /// <summary>Public method to fit to thumbnail with a specific scale.</summary>
+        /// <param name="scale">Scale of the thumbnail to consider.</param>
+        public void FitToThumbnailScale(double scale) {
+            FitToThumbnail(scale);
+        }
+
         #endregion
 
         #region Accessors

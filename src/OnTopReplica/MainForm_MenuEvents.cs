@@ -91,6 +91,7 @@ namespace OnTopReplica {
                 e.Cancel = true;
 
             restorePositionAndSizeToolStripMenuItem.Checked = Settings.Default.RestoreSizeAndPosition;
+            lockResizeToolStripMenuItem.Checked = ResizeLockEnabled;
         }
 
         private void Menu_Resize_Double(object sender, EventArgs e) {
@@ -115,6 +116,24 @@ namespace OnTopReplica {
 
         private void Menu_Resize_RecallPosition_click(object sender, EventArgs e) {
             Settings.Default.RestoreSizeAndPosition = !Settings.Default.RestoreSizeAndPosition;
+        }
+
+        private void Menu_Resize_LockResize(object sender, EventArgs e) {
+            ResizeLockEnabled = !ResizeLockEnabled;
+        }
+
+        private void Menu_Resize_SetSize(object sender, EventArgs e) {
+            using (var dlg = new SizeInputForm(this)) {
+                dlg.WindowSize = this.Size;
+                dlg.ShowDialog(this);
+            }
+        }
+
+        private void Menu_Resize_SetScale(object sender, EventArgs e) {
+            using (var dlg = new ScaleInputForm(this)) {
+                dlg.ScalePercentage = 100.0;
+                dlg.ShowDialog(this);
+            }
         }
 
         private void Menu_Position_Opening(object sender, EventArgs e) {
@@ -148,6 +167,15 @@ namespace OnTopReplica {
 
         private void Menu_Position_BottomRight(object sender, EventArgs e) {
             PositionLock = ScreenPosition.BottomRight;
+        }
+
+        private void Menu_Position_SetPosition(object sender, EventArgs e) {
+            using (var dlg = new PositionInputForm(this)) {
+                dlg.Position = this.Location;
+                if (dlg.ShowDialog(this) == DialogResult.OK) {
+                    PositionLock = null; // Clear position lock when manually setting position
+                }
+            }
         }
 
         private void Menu_Reduce_click(object sender, EventArgs e) {

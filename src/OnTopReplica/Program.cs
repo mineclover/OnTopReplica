@@ -60,9 +60,11 @@ namespace OnTopReplica {
             }
             if (options.Status == CliStatus.Information || options.Status == CliStatus.Error)
                 return;
-            
+
             //Load language
-            Thread.CurrentThread.CurrentUICulture = Settings.Default.Language;
+            if (Settings.Default.Language != null) {
+                Thread.CurrentThread.CurrentUICulture = Settings.Default.Language;
+            }
 
             //Show form
             using (_mainForm = new MainForm(options)) {
