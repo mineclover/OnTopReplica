@@ -109,6 +109,14 @@ namespace OnTopReplica {
             FitToThumbnail(0.25);
         }
 
+        private void Menu_Resize_Custom(object sender, EventArgs e) {
+            using (var dialog = new CustomResizeDialog()) {
+                if (dialog.ShowDialog(this) == DialogResult.OK) {
+                    FitToThumbnail(dialog.ResizeRatio);
+                }
+            }
+        }
+
         private void Menu_Resize_Fullscreen(object sender, EventArgs e) {
             FullscreenManager.SwitchFullscreen();
         }
@@ -118,16 +126,18 @@ namespace OnTopReplica {
         }
 
         private void Menu_Position_Opening(object sender, EventArgs e) {
-            disabledToolStripMenuItem.Checked = (PositionLock == null);
+            disabledToolStripMenuItem.Checked = (PositionLock == null && !IsCustomPositionLocked);
             topLeftToolStripMenuItem.Checked = (PositionLock == ScreenPosition.TopLeft);
             topRightToolStripMenuItem.Checked = (PositionLock == ScreenPosition.TopRight);
             centerToolStripMenuItem.Checked = (PositionLock == ScreenPosition.Center);
             bottomLeftToolStripMenuItem.Checked = (PositionLock == ScreenPosition.BottomLeft);
             bottomRightToolStripMenuItem.Checked = (PositionLock == ScreenPosition.BottomRight);
+            customPositionToolStripMenuItem.Checked = IsCustomPositionLocked;
         }
 
         private void Menu_Position_Disable(object sender, EventArgs e) {
             PositionLock = null;
+            ClearCustomPositionLock();
         }
 
         private void Menu_Position_TopLeft(object sender, EventArgs e) {
@@ -148,6 +158,17 @@ namespace OnTopReplica {
 
         private void Menu_Position_BottomRight(object sender, EventArgs e) {
             PositionLock = ScreenPosition.BottomRight;
+        }
+
+        private void Menu_Position_Custom(object sender, EventArgs e) {
+            using (var dialog = new CustomPositionDialog()) {
+                // Set initial position to current window location
+                dialog.InitialPosition = this.Location;
+
+                if (dialog.ShowDialog(this) == DialogResult.OK) {
+                    SetCustomPositionLock(dialog.CustomPosition);
+                }
+            }
         }
 
         private void Menu_Reduce_click(object sender, EventArgs e) {

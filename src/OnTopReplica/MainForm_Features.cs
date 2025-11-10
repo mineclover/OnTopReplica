@@ -135,6 +135,7 @@ namespace OnTopReplica {
         #region Position lock
 
         ScreenPosition? _positionLock = null;
+        Point? _customPositionLock = null;
 
         /// <summary>
         /// Gets or sets the screen position where the window is currently locked in.
@@ -148,15 +149,46 @@ namespace OnTopReplica {
                     this.SetScreenPosition(value.Value);
 
                 _positionLock = value;
+                _customPositionLock = null; // Clear custom position when setting standard position
             }
+        }
+
+        /// <summary>
+        /// Gets whether the window is locked to a custom position.
+        /// </summary>
+        public bool IsCustomPositionLocked {
+            get {
+                return _customPositionLock.HasValue;
+            }
+        }
+
+        /// <summary>
+        /// Sets a custom position lock at the specified coordinates.
+        /// </summary>
+        /// <param name="position">Absolute screen coordinates.</param>
+        public void SetCustomPositionLock(Point position) {
+            _customPositionLock = position;
+            _positionLock = null; // Clear standard position lock
+            this.Location = position;
+        }
+
+        /// <summary>
+        /// Clears the custom position lock.
+        /// </summary>
+        public void ClearCustomPositionLock() {
+            _customPositionLock = null;
         }
 
         /// <summary>
         /// Refreshes window position if in lock mode.
         /// </summary>
         private void RefreshScreenLock() {
-            //If locked in position, move accordingly
-            if (PositionLock.HasValue) {
+            //If locked to custom position, move to that position
+            if (_customPositionLock.HasValue) {
+                this.Location = _customPositionLock.Value;
+            }
+            //If locked in standard position, move accordingly
+            else if (PositionLock.HasValue) {
                 this.SetScreenPosition(PositionLock.Value);
             }
         }
