@@ -109,6 +109,14 @@ namespace OnTopReplica {
             FitToThumbnail(0.25);
         }
 
+        private void Menu_Resize_Custom(object sender, EventArgs e) {
+            using (var dialog = new CustomResizeDialog()) {
+                if (dialog.ShowDialog(this) == DialogResult.OK) {
+                    FitToThumbnail(dialog.ResizeRatio);
+                }
+            }
+        }
+
         private void Menu_Resize_Fullscreen(object sender, EventArgs e) {
             FullscreenManager.SwitchFullscreen();
         }
