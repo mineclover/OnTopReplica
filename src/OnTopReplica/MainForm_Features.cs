@@ -166,6 +166,8 @@ namespace OnTopReplica {
         #region Resize lock
 
         bool _resizeLock = false;
+        Size _preLockMinimumSize;
+        Size _preLockMaximumSize;
 
         /// <summary>
         /// Gets or sets whether the window size is locked (prevents user resizing).
@@ -175,18 +177,20 @@ namespace OnTopReplica {
                 return _resizeLock;
             }
             set {
-                _resizeLock = value;
+                if (value == _resizeLock) return;
 
                 if (value) {
-                    // Store current size and disable resizing
+                    _preLockMinimumSize = MinimumSize;
+                    _preLockMaximumSize = MaximumSize;
                     MaximumSize = Size;
                     MinimumSize = Size;
                 }
                 else {
-                    // Re-enable resizing
-                    MaximumSize = new Size(0, 0);
-                    MinimumSize = new Size(0, 0);
+                    MaximumSize = _preLockMaximumSize;
+                    MinimumSize = _preLockMinimumSize;
                 }
+
+                _resizeLock = value;
             }
         }
 

@@ -1,32 +1,40 @@
 using System;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace OnTopReplica {
     /// <summary>
-    /// Simple form for entering scale percentage.
+    /// Simple form for entering scale percentage with live preview and Cancel-restore.
     /// </summary>
-    public class ScaleInputForm : Form {
+    internal class ScaleInputForm : Form {
         private NumericUpDown numericScale;
         private Button buttonOK;
         private Button buttonCancel;
         private Label labelScale;
         private Label labelPercent;
 
-        private object _targetForm;
+        private readonly MainForm _targetForm;
+        private System.Drawing.Size _originalClientSize;
+        private bool _restoreOnClose = true;
 
         public double ScalePercentage {
-            get {
-                return (double)numericScale.Value;
-            }
-            set {
-                numericScale.Value = (decimal)value;
+            get { return (double)numericScale.Value; }
+            set { numericScale.Value = (decimal)value; }
+        }
+
+        public ScaleInputForm(MainForm targetForm) {
+            _targetForm = targetForm;
+            InitializeComponent();
+
+            if (_targetForm != null) {
+                _originalClientSize = _targetForm.ClientSize;
             }
         }
 
-        public ScaleInputForm(object targetForm) {
-            _targetForm = targetForm;
-            InitializeComponent();
+        /// <summary>
+        /// Computes the scale factor as ratio (e.g. 100% -> 1.0). Exposed for testability.
+        /// </summary>
+        public static double ToScaleFactor(decimal percentage) {
+            return (double)percentage / 100.0;
         }
 
         private void InitializeComponent() {
@@ -39,7 +47,6 @@ namespace OnTopReplica {
             ((System.ComponentModel.ISupportInitialize)(this.numericScale)).BeginInit();
             this.SuspendLayout();
 
-            // labelScale
             this.labelScale.AutoSize = true;
             this.labelScale.Location = new System.Drawing.Point(12, 15);
             this.labelScale.Name = "labelScale";
@@ -47,7 +54,6 @@ namespace OnTopReplica {
             this.labelScale.TabIndex = 0;
             this.labelScale.Text = Strings.MenuCtxScale;
 
-            // numericScale
             this.numericScale.Location = new System.Drawing.Point(70, 12);
             this.numericScale.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             this.numericScale.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
@@ -57,9 +63,8 @@ namespace OnTopReplica {
             this.numericScale.DecimalPlaces = 2;
             this.numericScale.Increment = new decimal(new int[] { 1, 0, 0, 0 });
             this.numericScale.Value = new decimal(new int[] { 100, 0, 0, 0 });
-            this.numericScale.ValueChanged += new EventHandler(NumericValue_Changed);
+            this.numericScale.ValueChanged += NumericValue_Changed;
 
-            // labelPercent
             this.labelPercent.AutoSize = true;
             this.labelPercent.Location = new System.Drawing.Point(156, 15);
             this.labelPercent.Name = "labelPercent";
@@ -67,7 +72,6 @@ namespace OnTopReplica {
             this.labelPercent.TabIndex = 2;
             this.labelPercent.Text = "%";
 
-            // buttonOK
             this.buttonOK.DialogResult = DialogResult.OK;
             this.buttonOK.Location = new System.Drawing.Point(14, 45);
             this.buttonOK.Name = "buttonOK";
@@ -75,8 +79,8 @@ namespace OnTopReplica {
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = Strings.MenuCtxOk;
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += (s, e) => _restoreOnClose = false;
 
-            // buttonCancel
             this.buttonCancel.DialogResult = DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(95, 45);
             this.buttonCancel.Name = "buttonCancel";
@@ -85,7 +89,6 @@ namespace OnTopReplica {
             this.buttonCancel.Text = Strings.MenuCtxCancel;
             this.buttonCancel.UseVisualStyleBackColor = true;
 
-            // ScaleInputForm
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
@@ -112,25 +115,20 @@ namespace OnTopReplica {
         }
 
         private void NumericValue_Changed(object sender, EventArgs e) {
-            if (_targetForm != null) {
-                try {
-                    var type = _targetForm.GetType();
-                    var thumbnailPanelProp = type.GetProperty("ThumbnailPanel");
-                    if (thumbnailPanelProp != null) {
-                        var thumbnailPanel = thumbnailPanelProp.GetValue(_targetForm, null);
-                        var isShowingProp = thumbnailPanel.GetType().GetProperty("IsShowingThumbnail");
-                        if (isShowingProp != null && (bool)isShowingProp.GetValue(thumbnailPanel, null)) {
-                            double scale = (double)numericScale.Value / 100.0;
-                            var method = type.GetMethod("FitToThumbnailScale");
-                            if (method != null) {
-                                method.Invoke(_targetForm, new object[] { scale });
-                            }
-                        }
-                    }
-                }
-                catch {
-                    // Silently ignore errors
-                }
+            if (_targetForm == null) return;
+
+            bool hasSource = _targetForm.ThumbnailPanel.IsShowingThumbnail
+                          || _targetForm.CurrentSourceMode == MainForm.SourceMode.Image;
+            if (!hasSource) return;
+
+            _targetForm.FitToThumbnailScale(ToScaleFactor(numericScale.Value));
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+
+            if (_restoreOnClose && _targetForm != null && DialogResult != DialogResult.OK) {
+                _targetForm.ClientSize = _originalClientSize;
             }
         }
     }

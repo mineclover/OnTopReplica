@@ -61,6 +61,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>1685</NoWarn>
     <DocumentationFile>
     </DocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -75,6 +76,7 @@
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>1685</NoWarn>
     <DocumentationFile>
     </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
@@ -109,11 +111,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk.IL">
-      <Version>9.0.0</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Windows-Forms-Aero">
       <Version>3.0.1</Version>
     </PackageReference>
@@ -139,6 +136,14 @@
     <Compile Include="FullscreenFormManager.cs" />
     <Compile Include="FullscreenMode.cs" />
     <Compile Include="GeometryExtensions.cs" />
+    <Compile Include="ImagePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImagePreset.cs" />
+    <Compile Include="ImagePresetArray.cs" />
+    <Compile Include="SidePanels\ImagePresetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="HotKeyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -1,10 +1,4 @@
-﻿using OnTopReplica.Native;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace OnTopReplica.MessagePumpProcessors {
+﻿namespace OnTopReplica.MessagePumpProcessors {
 
     /// <summary>
     /// Automatically clones windows that are flashing.
@@ -12,22 +6,22 @@ namespace OnTopReplica.MessagePumpProcessors {
     class FlashCloner : BaseMessagePumpProcessor {
 
         public override bool Process(ref System.Windows.Forms.Message msg) {
-            if (false &&
-                msg.Msg == HookMethods.WM_SHELLHOOKMESSAGE) {
+#if FLASH_CLONER_ENABLED
+            if (msg.Msg == Native.HookMethods.WM_SHELLHOOKMESSAGE) {
                 int hookCode = msg.WParam.ToInt32();
 
-                if (hookCode == HookMethods.HSHELL_FLASH) {
-                    IntPtr flashHandle = msg.LParam;
+                if (hookCode == Native.HookMethods.HSHELL_FLASH) {
+                    System.IntPtr flashHandle = msg.LParam;
 
                     Form.SetThumbnail(new WindowHandle(flashHandle), null);
                 }
             }
+#endif
 
             return false;
         }
 
         protected override void Shutdown() {
-            
         }
 
     }

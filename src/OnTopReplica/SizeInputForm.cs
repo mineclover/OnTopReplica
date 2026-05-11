@@ -14,21 +14,41 @@ namespace OnTopReplica {
         private Label labelWidth;
         private Label labelHeight;
 
-        private Form _targetForm;
+        private readonly Form _targetForm;
+        private Size _originalSize;
+        private bool _restoreOnClose = true;
 
         public Size WindowSize {
             get {
                 return new Size((int)numericWidth.Value, (int)numericHeight.Value);
             }
             set {
-                numericWidth.Value = value.Width;
-                numericHeight.Value = value.Height;
+                numericWidth.Value = Clamp(value.Width, numericWidth.Minimum, numericWidth.Maximum);
+                numericHeight.Value = Clamp(value.Height, numericHeight.Minimum, numericHeight.Maximum);
             }
+        }
+
+        static decimal Clamp(int v, decimal min, decimal max) {
+            if (v < min) return min;
+            if (v > max) return max;
+            return v;
         }
 
         public SizeInputForm(Form targetForm) {
             _targetForm = targetForm;
             InitializeComponent();
+
+            if (_targetForm != null) {
+                _originalSize = _targetForm.Size;
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+
+            if (_restoreOnClose && _targetForm != null && DialogResult != DialogResult.OK) {
+                _targetForm.Size = _originalSize;
+            }
         }
 
         private void InitializeComponent() {
@@ -54,7 +74,7 @@ namespace OnTopReplica {
             // numericWidth
             this.numericWidth.Location = new Point(70, 12);
             this.numericWidth.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            this.numericWidth.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
+            this.numericWidth.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.numericWidth.Name = "numericWidth";
             this.numericWidth.Size = new Size(100, 20);
             this.numericWidth.TabIndex = 1;
@@ -71,7 +91,7 @@ namespace OnTopReplica {
             // numericHeight
             this.numericHeight.Location = new Point(70, 42);
             this.numericHeight.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            this.numericHeight.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
+            this.numericHeight.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.numericHeight.Name = "numericHeight";
             this.numericHeight.Size = new Size(100, 20);
             this.numericHeight.TabIndex = 3;
@@ -85,6 +105,7 @@ namespace OnTopReplica {
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = Strings.MenuCtxOk;
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += (s, e) => _restoreOnClose = false;
 
             // buttonCancel
             this.buttonCancel.DialogResult = DialogResult.Cancel;

@@ -14,21 +14,41 @@ namespace OnTopReplica {
         private Label labelX;
         private Label labelY;
 
-        private Form _targetForm;
+        private readonly Form _targetForm;
+        private Point _originalLocation;
+        private bool _restoreOnClose = true;
 
         public Point Position {
             get {
                 return new Point((int)numericX.Value, (int)numericY.Value);
             }
             set {
-                numericX.Value = value.X;
-                numericY.Value = value.Y;
+                numericX.Value = Clamp(value.X, numericX.Minimum, numericX.Maximum);
+                numericY.Value = Clamp(value.Y, numericY.Minimum, numericY.Maximum);
             }
+        }
+
+        static decimal Clamp(int v, decimal min, decimal max) {
+            if (v < min) return min;
+            if (v > max) return max;
+            return v;
         }
 
         public PositionInputForm(Form targetForm) {
             _targetForm = targetForm;
             InitializeComponent();
+
+            if (_targetForm != null) {
+                _originalLocation = _targetForm.Location;
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e) {
+            base.OnFormClosing(e);
+
+            if (_restoreOnClose && _targetForm != null && DialogResult != DialogResult.OK) {
+                _targetForm.Location = _originalLocation;
+            }
         }
 
         private void InitializeComponent() {
@@ -85,6 +105,7 @@ namespace OnTopReplica {
             this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = Strings.MenuCtxOk;
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += (s, e) => _restoreOnClose = false;
 
             // buttonCancel
             this.buttonCancel.DialogResult = DialogResult.Cancel;
