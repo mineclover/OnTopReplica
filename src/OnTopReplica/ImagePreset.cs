@@ -12,9 +12,11 @@ namespace OnTopReplica {
         public ImagePreset() {
             Opacity = 1.0;
             Scale = 1.0;
+            Hotkey = "";
         }
 
-        public ImagePreset(string name, string path, Point location, Size size, double scale, double opacity) {
+        public ImagePreset(string name, string path, Point location, Size size, double scale, double opacity)
+            : this() {
             Name = name;
             Path = path;
             Location = location;
@@ -33,6 +35,12 @@ namespace OnTopReplica {
 
         /// <summary>Window opacity 0..1.</summary>
         public double Opacity { get; set; }
+
+        /// <summary>
+        /// Global hotkey that applies this preset, in the HotKeyTextBox spec format
+        /// (e.g. "[CTRL]+[ALT]+1"). Empty string = no hotkey.
+        /// </summary>
+        public string Hotkey { get; set; }
 
         public override string ToString() {
             return string.IsNullOrEmpty(Name) ? Path : Name;

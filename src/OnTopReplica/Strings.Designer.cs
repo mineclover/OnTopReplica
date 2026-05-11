@@ -1353,6 +1353,42 @@ namespace OnTopReplica {
             get { return ResourceManager.GetString("PresetStatusNoImage", resourceCulture); }
         }
 
+        internal static string PresetColumnName {
+            get { return ResourceManager.GetString("PresetColumnName", resourceCulture); }
+        }
+
+        internal static string PresetColumnHotkey {
+            get { return ResourceManager.GetString("PresetColumnHotkey", resourceCulture); }
+        }
+
+        internal static string PresetColumnSize {
+            get { return ResourceManager.GetString("PresetColumnSize", resourceCulture); }
+        }
+
+        internal static string PresetHotkeyLabel {
+            get { return ResourceManager.GetString("PresetHotkeyLabel", resourceCulture); }
+        }
+
+        internal static string PresetAssignHotkey {
+            get { return ResourceManager.GetString("PresetAssignHotkey", resourceCulture); }
+        }
+
+        internal static string PresetClearHotkey {
+            get { return ResourceManager.GetString("PresetClearHotkey", resourceCulture); }
+        }
+
+        internal static string PresetHotkeyEmpty {
+            get { return ResourceManager.GetString("PresetHotkeyEmpty", resourceCulture); }
+        }
+
+        internal static string PresetHotkeyInvalid {
+            get { return ResourceManager.GetString("PresetHotkeyInvalid", resourceCulture); }
+        }
+
+        internal static string PresetHotkeyAssigned {
+            get { return ResourceManager.GetString("PresetHotkeyAssigned", resourceCulture); }
+        }
+
         /// <summary>
         ///   查詢類似 Restore last cloned window 的當地語系化字串。
         /// </summary>

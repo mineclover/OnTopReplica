@@ -90,6 +90,34 @@ namespace OnTopReplica.Tests {
         }
 
         [Test]
+        public void Hotkey_RoundTrip_PreservesSpec() {
+            var arr = new ImagePresetArray {
+                new ImagePreset("withHk", "x", new Point(0,0), new Size(1,1), 1.0, 1.0) { Hotkey = "[CTRL]+[ALT]+1" },
+                new ImagePreset("noHk",   "y", new Point(0,0), new Size(1,1), 1.0, 1.0)
+            };
+            var sb = new StringBuilder();
+            using (var w = XmlWriter.Create(sb)) {
+                w.WriteStartElement("Root");
+                arr.WriteXml(w);
+                w.WriteEndElement();
+            }
+            var parsed = new ImagePresetArray();
+            using (var r = XmlReader.Create(new StringReader(sb.ToString()))) {
+                r.ReadToDescendant("Root");
+                parsed.ReadXml(r);
+            }
+            Assert.AreEqual(2, parsed.Count);
+            Assert.AreEqual("[CTRL]+[ALT]+1", parsed[0].Hotkey);
+            Assert.AreEqual("", parsed[1].Hotkey);
+        }
+
+        [Test]
+        public void Defaults_HotkeyIsEmpty() {
+            var p = new ImagePreset();
+            Assert.AreEqual("", p.Hotkey);
+        }
+
+        [Test]
         public void ArrayRoundTrip_EmptyList() {
             var arr = new ImagePresetArray();
             var sb = new StringBuilder();

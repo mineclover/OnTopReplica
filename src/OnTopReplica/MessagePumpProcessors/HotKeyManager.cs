@@ -99,6 +99,19 @@ namespace OnTopReplica.MessagePumpProcessors {
             RegisterHandler(Settings.Default.HotKeyCloneCurrent, HotKeyCloneHandler);
             RegisterHandler(Settings.Default.HotKeyShowHide, HotKeyShowHideHandler);
             RegisterHandler(Settings.Default.HotKeyImagePanel, HotKeyImagePanelHandler);
+
+            //Register per-preset hotkeys. Captured by value so each handler applies its own preset.
+            var presets = Settings.Default.ImagePresets;
+            if (presets != null) {
+                foreach (var preset in presets) {
+                    if (string.IsNullOrEmpty(preset.Hotkey)) continue;
+                    var captured = preset;
+                    RegisterHandler(captured.Hotkey, delegate {
+                        Form.EnsureMainFormVisible();
+                        Form.ApplyImagePreset(captured);
+                    });
+                }
+            }
         }
 
         private void RegisterHandler(string spec, HotKeyHandler handler) {

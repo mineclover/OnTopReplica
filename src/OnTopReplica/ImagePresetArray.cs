@@ -48,6 +48,7 @@ namespace OnTopReplica {
                     ),
                     Scale = ClampOpacityLike(ParseDouble(el.Element("Scale"), 1.0), 0.01, 100.0),
                     Opacity = ClampOpacityLike(ParseDouble(el.Element("Opacity"), 1.0), 0.1, 1.0),
+                    Hotkey = ((string)el.Element("Hotkey") ?? "").Trim(),
                 };
             }
             catch (Exception ex) {
@@ -72,6 +73,8 @@ namespace OnTopReplica {
             writer.WriteElementString("Height", p.Size.Height.ToString(CultureInfo.InvariantCulture));
             writer.WriteElementString("Scale", p.Scale.ToString("R", CultureInfo.InvariantCulture));
             writer.WriteElementString("Opacity", p.Opacity.ToString("R", CultureInfo.InvariantCulture));
+            if (!string.IsNullOrEmpty(p.Hotkey))
+                writer.WriteElementString("Hotkey", p.Hotkey);
             writer.WriteEndElement();
         }
 

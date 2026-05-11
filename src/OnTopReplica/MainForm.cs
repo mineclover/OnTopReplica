@@ -733,6 +733,15 @@ namespace OnTopReplica {
         }
 
         /// <summary>
+        /// Re-registers all global hotkeys, including per-preset hotkeys.
+        /// Call after modifying <c>Settings.Default.ImagePresets</c>.
+        /// </summary>
+        public void RefreshHotkeys() {
+            var mgr = _msgPumpManager.Get<MessagePumpProcessors.HotKeyManager>();
+            if (mgr != null) mgr.RefreshHotkeys();
+        }
+
+        /// <summary>
         /// Toggles the image preset side panel: opens it if closed, closes it if currently shown.
         /// </summary>
         public void ToggleImagePresetPanel() {

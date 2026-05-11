@@ -585,6 +585,33 @@ You can enable click-through later</value>
   <data name="PresetStatusNoImage" xml:space="preserve">
     <value>No image is loaded.</value>
   </data>
+  <data name="PresetColumnName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PresetColumnHotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="PresetColumnSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="PresetHotkeyLabel" xml:space="preserve">
+    <value>Hotkey:</value>
+  </data>
+  <data name="PresetAssignHotkey" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="PresetClearHotkey" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="PresetHotkeyEmpty" xml:space="preserve">
+    <value>Press a key combination in the box first.</value>
+  </data>
+  <data name="PresetHotkeyInvalid" xml:space="preserve">
+    <value>Hotkey combination is invalid.</value>
+  </data>
+  <data name="PresetHotkeyAssigned" xml:space="preserve">
+    <value>Assigned {0} → {1}</value>
+  </data>
   <data name="MenuRestoreLast" xml:space="preserve">
     <value>Restore last cloned window</value>
   </data>

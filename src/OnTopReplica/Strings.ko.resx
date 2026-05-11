@@ -585,6 +585,33 @@
   <data name="PresetStatusNoImage" xml:space="preserve">
     <value>로드된 이미지가 없습니다.</value>
   </data>
+  <data name="PresetColumnName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="PresetColumnHotkey" xml:space="preserve">
+    <value>핫키</value>
+  </data>
+  <data name="PresetColumnSize" xml:space="preserve">
+    <value>크기</value>
+  </data>
+  <data name="PresetHotkeyLabel" xml:space="preserve">
+    <value>핫키:</value>
+  </data>
+  <data name="PresetAssignHotkey" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="PresetClearHotkey" xml:space="preserve">
+    <value>해제</value>
+  </data>
+  <data name="PresetHotkeyEmpty" xml:space="preserve">
+    <value>먼저 입력란에서 키 조합을 누르세요.</value>
+  </data>
+  <data name="PresetHotkeyInvalid" xml:space="preserve">
+    <value>핫키 조합이 올바르지 않습니다.</value>
+  </data>
+  <data name="PresetHotkeyAssigned" xml:space="preserve">
+    <value>{0} → {1} 할당됨</value>
+  </data>
   <data name="MenuRestoreLast" xml:space="preserve">
     <value>마지막으로 복제한 창 복원</value>
   </data>
