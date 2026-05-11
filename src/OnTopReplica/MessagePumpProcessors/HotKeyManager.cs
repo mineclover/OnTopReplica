@@ -98,6 +98,7 @@ namespace OnTopReplica.MessagePumpProcessors {
 
             RegisterHandler(Settings.Default.HotKeyCloneCurrent, HotKeyCloneHandler);
             RegisterHandler(Settings.Default.HotKeyShowHide, HotKeyShowHideHandler);
+            RegisterHandler(Settings.Default.HotKeyImagePanel, HotKeyImagePanelHandler);
         }
 
         private void RegisterHandler(string spec, HotKeyHandler handler) {
@@ -147,6 +148,15 @@ namespace OnTopReplica.MessagePumpProcessors {
             else {
                 Form.EnsureMainFormVisible();
             }
+        }
+
+        /// <summary>
+        /// Handles the "toggle image preset panel" hotkey.
+        /// Ensures the form is visible, then opens or closes the preset side panel.
+        /// </summary>
+        void HotKeyImagePanelHandler() {
+            Form.EnsureMainFormVisible();
+            Form.ToggleImagePresetPanel();
         }
 
         /// <summary>

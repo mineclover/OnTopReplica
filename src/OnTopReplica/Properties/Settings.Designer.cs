@@ -249,5 +249,28 @@ namespace OnTopReplica.Properties {
                 this["RestoreLastShowChrome"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::OnTopReplica.ImagePresetArray ImagePresets {
+            get {
+                return ((global::OnTopReplica.ImagePresetArray)(this["ImagePresets"]));
+            }
+            set {
+                this["ImagePresets"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("[CTRL]+[SHIFT]+I")]
+        public string HotKeyImagePanel {
+            get {
+                return ((string)(this["HotKeyImagePanel"]));
+            }
+            set {
+                this["HotKeyImagePanel"] = value;
+            }
+        }
     }
 }
