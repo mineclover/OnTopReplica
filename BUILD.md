@@ -142,12 +142,19 @@ nuget restore OnTopReplica.sln
 ### Project Structure
 
 - **src/OnTopReplica/**: Main application source code
-  - `MainForm.cs`: Main window and core functionality
-  - `MainForm_MenuEvents.cs`: Context menu event handlers
-  - `*InputForm.cs`: Input dialogs (Position, Size, Scale)
-  - `SidePanels/`: Side panel UI components
-  - `Properties/`: Resources and settings
+  - `MainForm.cs` / `MainForm_*.cs`: Main window and partial-class feature splits (GUI / Features / MenuEvents / ChildForms)
+  - `ThumbnailPanel.cs`: DWM-thumbnail rendering panel (live window mirror)
+  - `ImagePanel.cs`: Static-image rendering panel (new, supports mouse pass-through and placement-mode internal drag)
+  - `ImagePreset.cs` / `ImagePresetArray.cs`: Image overlay preset model + XML serialization
+  - `FullscreenFormManager.cs`: Fullscreen state with cover-monitor variant
+  - `*InputForm.cs`: Pixel-precise input dialogs (Position, Size, Scale) with live preview + Cancel-restore
+  - `SidePanels/`: Side panel UI components (Options, About, Region, GroupSwitch, **ImagePresetPanel**)
+  - `MessagePumpProcessors/`: Native message handlers — `HotKeyManager` registers `HotKeyImagePanel`
+  - `Native/`: Win32 P/Invoke
+  - `StartupOptions/`: Command-line parsing + TypeConverters
+  - `Properties/`: Settings (user-scoped XML, including `ImagePresets` and `HotKeyImagePanel`) and resources
   - `Assets/`: Image resources (flags, icons)
+- **src/OnTopReplica.Tests/**: Console-runner unit tests (see "Running Tests" above)
 
 ### Adding New Languages
 
@@ -178,6 +185,53 @@ Example CI build command:
 nuget restore
 powershell -ExecutionPolicy Bypass -File build.ps1
 ```
+
+## Running Tests
+
+A standalone console test project lives under `src/OnTopReplica.Tests/`. It uses a custom `[Test]` attribute and a reflection-based runner — no MSTest/VSTest infrastructure required, which keeps the toolchain simple on .NET Framework 4.7.
+
+### Run all tests
+
+```powershell
+# From repository root
+./test.ps1
+```
+
+This builds the test project with VS 2022 BuildTools MSBuild and runs the resulting executable. Output:
+
+```
+== ImagePresetTests
+  [PASS] ArrayRoundTrip_EmptyList
+  ...
+Result: 21 passed, 0 failed
+```
+
+### Manual
+
+```powershell
+& "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe" `
+  "src\OnTopReplica.Tests\OnTopReplica.Tests.csproj" `
+  /p:Configuration=Debug /t:Build /v:minimal
+& "src\OnTopReplica.Tests\bin\Debug\OnTopReplica.Tests.exe"
+```
+
+### Coverage
+
+| Test class | What it verifies |
+|------------|------------------|
+| `SizeConverterTests` | Negative-value regex regression (commit 63e9487), round-trip |
+| `ScaleInputFormTests` | `ToScaleFactor` percent→ratio conversion |
+| `ResizeLockTests` | Lock pins Min/Max to current; unlock restores prior values; idempotency |
+| `ImagePresetTests` | XML round-trip, defaults, drops empty-Path entries, opacity clamping |
+
+### Adding new tests
+
+1. Create `src/OnTopReplica.Tests/<Name>Tests.cs` with a public class
+2. Add `[Test]` to public parameter-less methods
+3. Add the file to `<ItemGroup><Compile Include="..." /></ItemGroup>` in `OnTopReplica.Tests.csproj`
+4. Use `Assert.AreEqual`, `Assert.AreClose`, `Assert.IsTrue`, or `Assert.Throws<T>`
+
+The runner auto-discovers via reflection — no registration needed.
 
 ## Additional Resources
 

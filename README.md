@@ -1,37 +1,75 @@
 # OnTopReplica
 
-**A real-time always-on-top “replica” of a window of your choice, for Windows Vista, 7, 8, or 10.**
+**A real-time always-on-top "replica" of a window of your choice, plus a pixel-accurate image overlay tool, for Windows Vista, 7, 8, 10, or 11.**
 
-This simple utility application shows a blank always-on-top window by default.
-Users can pick any other window of the system to have an always up-to-date clone of the target window shown always-on-top.
-Very useful for monitoring background processes, wrangling with complex multi-window games or tools, watching Youtube videos while working, and so on.
+This utility shows a blank always-on-top window by default. It supports two source modes:
 
-**📢 Features:**
+- **Thumbnail mode** — clone any window of the system as an always up-to-date live thumbnail. Useful for monitoring background processes, wrangling complex multi-window games or tools, watching videos while working, and so on.
+- **Image mode** — place a static image as a pixel-accurate overlay anywhere on screen. Useful for design comparison, reference overlays (PureRef-like), pixel alignment, and screen layout planning.
 
-* Clone any of your windows and keep it *always-on-top* while working with other windows,
-* Select a subregion of the cloned window, which:
-  * Can be stored for future use,
-  * Can use relative coordinates from the target window’s borders.
-* Auto-resizing (fit the original window, half, quarter and fullscreen mode),
-* Position lock on any corner of your screen,
-* Adjustable opacity,
-* “Click forwarding”: allows to interact with the cloned window,
-* “Click-through”: makes the replica ignore any mouse interaction (turns **OnTopReplica** into an overlay if set together with partial opacity),
-* “Group switch”-mode automatically switches through a group of windows while you use them.
+## 📢 Features
+
+### Thumbnail mode (original)
+
+- Clone any window and keep it *always-on-top* while working with others
+- Select a subregion of the cloned window
+  - Stored for future use
+  - Relative coordinates from window borders supported
+- Auto-resizing: fit original, half, quarter, fullscreen
+- "Click forwarding" to interact with the cloned window
+- "Group switch" mode auto-switches through a group of windows
+- "Click-through" makes the replica ignore mouse input (combined with partial opacity = unobtrusive overlay)
+
+### Image mode (new)
+
+- **Load any image** (.png / .jpg / .bmp / .gif / .tif / .webp) via menu or **drag-and-drop**
+- Loads at native **1:1 pixel size** for accurate overlay
+- **Image presets** — save multiple images with their (position, size, scale, opacity); swap instantly between presets
+  - Toggleable preset panel via hotkey **Ctrl+Shift+I**
+  - Add / update / delete / apply from the side panel
+- **Placement mode** — form expands to cover the current monitor with a click-through background; drag the image inside to position pixel-precise on the desktop, then exit to lock in
+- **Fit to image size (1:1)** — snap form back to native pixel size at any time
+- **Fit to monitor** — cover the entire monitor including the taskbar (one-click full coverage)
+
+### Shared between modes
+
+- Always on top, adjustable opacity, hide-chrome, position lock to screen corners
+- Pixel-precise positioning dialogs: **Set position…**, **Set size…**, **Set scale…** (with live preview, Cancel restores original)
+- **Resize lock** to pin the current window size
+
+## Hotkeys
+
+| Hotkey | Action |
+|--------|--------|
+| `Ctrl+Shift+C` | Clone current foreground window |
+| `Ctrl+Shift+O` | Show / hide OnTopReplica |
+| `Ctrl+Shift+I` | Toggle the image preset panel |
+| `F11` / image double-click | Toggle fullscreen |
+| `ESC` | Exit placement mode → click-through → fullscreen → click-forwarding (in order) |
+| `Alt+1/2/3/4` | Quarter / Half / Original / Double scale |
+
+## Image overlay workflow
+
+1. Launch OnTopReplica
+2. Drag an image onto the window, or right-click → **Load image…**
+3. Drag the window with the mouse to roughly position
+4. (Optional) Right-click → **Resize** → **Placement mode** for pixel-precise placement: image becomes draggable on a transparent full-monitor canvas; ESC to commit
+5. Right-click → **Image presets…** (or `Ctrl+Shift+I`) → **Add current** to save the layout
+6. Repeat for additional images; double-click any preset in the list to swap instantly
 
 ## Requirements
 
-* Microsoft Windows Vista or greater (the application makes use of native DWM&nbsp;Thumbnails to create replicas),
-* Microsoft .NET Framework 4.7.
-* Desktop Composition (a.k.a. Windows *Aero*) enabled.
+- Microsoft Windows Vista or greater (uses DWM Thumbnails)
+- Microsoft .NET Framework 4.7
+- Desktop Composition (Windows Aero) enabled
 
 ## Installation
 
-Get the [latest version](https://github.com/LorenzCK/OnTopReplica/releases) from the releases section as an MSI&nbsp;installer.
+Get the [latest version](https://github.com/LorenzCK/OnTopReplica/releases) from the releases section as an MSI installer.
 
 ## Building from Source
 
-See [BUILD.md](BUILD.md) for detailed build instructions and environment setup.
+See [BUILD.md](BUILD.md) for detailed build instructions, environment setup, and test runner usage.
 
 ## Contributions
 
@@ -41,11 +79,14 @@ Submitting [issues](https://github.com/LorenzCK/OnTopReplica/issues) and other f
 
 ### Roadmap
 
-1. ✅&nbsp;Update to the newest [WindowsFormsAero](https://github.com/LorenzCK/WindowsFormsAero) version.
-1. ✅&nbsp;Migrate to .NET 4.7.
-1. Improve/add **High DPI** support!
-1. “Stored scenarios” that, just like stored regions, automatically clone a window (based on title or window class criteria), select a region, and set other options. Ideally to be used as Taskbar shortlinks.
-1. Move to the Windows Store, via Centennial. 🤞
+1. ✅ Update to the newest [WindowsFormsAero](https://github.com/LorenzCK/WindowsFormsAero) version.
+1. ✅ Migrate to .NET 4.7.
+1. ✅ Korean localization, position/size/scale input dialogs, resize lock.
+1. ✅ Static-image overlay mode with presets and placement mode.
+1. Per-preset hotkeys (Ctrl+Alt+1…9) for instant slot recall.
+1. Improve / add **High DPI** support!
+1. "Stored scenarios" that auto-clone a window by title/class and apply region/options. Ideally as Taskbar shortlinks.
+1. Move to the Windows Store via Centennial. 🤞
 
 ## License
 
