@@ -149,7 +149,7 @@ nuget restore OnTopReplica.sln
   - `FullscreenFormManager.cs`: Fullscreen state with cover-monitor variant
   - `*InputForm.cs`: Pixel-precise input dialogs (Position, Size, Scale) with live preview + Cancel-restore
   - `SidePanels/`: Side panel UI components (Options, About, Region, GroupSwitch, **ImagePresetPanel**)
-  - `MessagePumpProcessors/`: Native message handlers — `HotKeyManager` registers `HotKeyImagePanel`
+  - `MessagePumpProcessors/`: Native message handlers — `HotKeyManager` registers global hotkeys (clone-current, show-hide, image-panel toggle, and one per `ImagePreset.Hotkey`)
   - `Native/`: Win32 P/Invoke
   - `StartupOptions/`: Command-line parsing + TypeConverters
   - `Properties/`: Settings (user-scoped XML, including `ImagePresets` and `HotKeyImagePanel`) and resources
@@ -222,7 +222,7 @@ Result: 21 passed, 0 failed
 | `SizeConverterTests` | Negative-value regex regression (commit 63e9487), round-trip |
 | `ScaleInputFormTests` | `ToScaleFactor` percent→ratio conversion |
 | `ResizeLockTests` | Lock pins Min/Max to current; unlock restores prior values; idempotency |
-| `ImagePresetTests` | XML round-trip, defaults, drops empty-Path entries, opacity clamping |
+| `ImagePresetTests` | XML round-trip incl. per-preset `Hotkey`, defaults, drops empty-Path entries, opacity clamping |
 
 ### Adding new tests
 

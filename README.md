@@ -24,9 +24,10 @@ This utility shows a blank always-on-top window by default. It supports two sour
 
 - **Load any image** (.png / .jpg / .bmp / .gif / .tif / .webp) via menu or **drag-and-drop**
 - Loads at native **1:1 pixel size** for accurate overlay
-- **Image presets** — save multiple images with their (position, size, scale, opacity); swap instantly between presets
-  - Toggleable preset panel via hotkey **Ctrl+Shift+I**
-  - Add / update / delete / apply from the side panel
+- **Image layer manager** — save multiple images as "layers", each with (position, size, scale, opacity); swap instantly between them
+  - Toggleable layer panel via hotkey **Ctrl+Shift+I**
+  - Add / update / delete / apply / reorder (▲▼)
+  - **Per-layer global hotkey assignment** — click a row, press a key combo (e.g. `Ctrl+Alt+1`) in the hotkey box, press *Set* → that combo applies the layer from anywhere; conflicts auto-clear the previous owner
 - **Placement mode** — form expands to cover the current monitor with a click-through background; drag the image inside to position pixel-precise on the desktop, then exit to lock in
 - **Fit to image size (1:1)** — snap form back to native pixel size at any time
 - **Fit to monitor** — cover the entire monitor including the taskbar (one-click full coverage)
@@ -43,7 +44,8 @@ This utility shows a blank always-on-top window by default. It supports two sour
 |--------|--------|
 | `Ctrl+Shift+C` | Clone current foreground window |
 | `Ctrl+Shift+O` | Show / hide OnTopReplica |
-| `Ctrl+Shift+I` | Toggle the image preset panel |
+| `Ctrl+Shift+I` | Toggle the image layer panel |
+| `Ctrl+Alt+<key>` (configurable per layer) | Apply that layer instantly |
 | `F11` / image double-click | Toggle fullscreen |
 | `ESC` | Exit placement mode → click-through → fullscreen → click-forwarding (in order) |
 | `Alt+1/2/3/4` | Quarter / Half / Original / Double scale |
@@ -56,6 +58,7 @@ This utility shows a blank always-on-top window by default. It supports two sour
 4. (Optional) Right-click → **Resize** → **Placement mode** for pixel-precise placement: image becomes draggable on a transparent full-monitor canvas; ESC to commit
 5. Right-click → **Image presets…** (or `Ctrl+Shift+I`) → **Add current** to save the layout
 6. Repeat for additional images; double-click any preset in the list to swap instantly
+7. (Optional) Select a preset, type a key combo in the **Hotkey** box, press *Set* — that combo now applies the preset from anywhere in Windows
 
 ## Requirements
 
@@ -83,7 +86,7 @@ Submitting [issues](https://github.com/LorenzCK/OnTopReplica/issues) and other f
 1. ✅ Migrate to .NET 4.7.
 1. ✅ Korean localization, position/size/scale input dialogs, resize lock.
 1. ✅ Static-image overlay mode with presets and placement mode.
-1. Per-preset hotkeys (Ctrl+Alt+1…9) for instant slot recall.
+1. ✅ Per-preset hotkeys (assignable from the layer panel) for instant slot recall.
 1. Improve / add **High DPI** support!
 1. "Stored scenarios" that auto-clone a window by title/class and apply region/options. Ideally as Taskbar shortlinks.
 1. Move to the Windows Store via Centennial. 🤞
