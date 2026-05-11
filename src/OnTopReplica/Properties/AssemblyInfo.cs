@@ -35,3 +35,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.5.1.0")]
 [assembly: AssemblyFileVersion("3.5.1.0")]
+
+[assembly: InternalsVisibleTo("OnTopReplica.Tests")]
