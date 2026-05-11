@@ -543,6 +543,48 @@ You can enable click-through later</value>
   <data name="MenuCtxScale" xml:space="preserve">
     <value>Scale:</value>
   </data>
+  <data name="MenuLoadImage" xml:space="preserve">
+    <value>Load image...</value>
+  </data>
+  <data name="MenuUnloadImage" xml:space="preserve">
+    <value>Unload image</value>
+  </data>
+  <data name="MenuImagePresets" xml:space="preserve">
+    <value>Image presets...</value>
+  </data>
+  <data name="MenuFitMonitor" xml:space="preserve">
+    <value>Fit to monitor (cover taskbar)</value>
+  </data>
+  <data name="MenuFitImageSize" xml:space="preserve">
+    <value>Fit to image size (1:1)</value>
+  </data>
+  <data name="MenuPlacementMode" xml:space="preserve">
+    <value>Placement mode (drag image)</value>
+  </data>
+  <data name="PresetApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="PresetDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="PresetAddCurrent" xml:space="preserve">
+    <value>Add current</value>
+  </data>
+  <data name="PresetUpdate" xml:space="preserve">
+    <value>Update selected</value>
+  </data>
+  <data name="PresetLoadFile" xml:space="preserve">
+    <value>Load image file...</value>
+  </data>
+  <data name="PresetPromptTitle" xml:space="preserve">
+    <value>Preset name</value>
+  </data>
+  <data name="PresetStatusSelectFirst" xml:space="preserve">
+    <value>Select a preset first.</value>
+  </data>
+  <data name="PresetStatusNoImage" xml:space="preserve">
+    <value>No image is loaded.</value>
+  </data>
   <data name="MenuRestoreLast" xml:space="preserve">
     <value>Restore last cloned window</value>
   </data>

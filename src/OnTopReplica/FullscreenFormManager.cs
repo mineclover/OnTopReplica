@@ -29,13 +29,31 @@ namespace OnTopReplica {
             SwitchFullscreen(Settings.Default.GetFullscreenMode());
         }
 
+        /// <summary>
+        /// Toggles a "cover everything" fullscreen: full monitor bounds (taskbar included)
+        /// with TopMost forced on. Does not persist mode/always-on-top preferences.
+        /// </summary>
+        public void ToggleCoverMonitor() {
+            if (IsFullscreen) {
+                SwitchBack();
+                return;
+            }
+            SwitchFullscreen(FullscreenMode.Fullscreen, forceTopMost: true);
+        }
+
         public void SwitchFullscreen(FullscreenMode mode) {
+            SwitchFullscreen(mode, forceTopMost: false);
+        }
+
+        void SwitchFullscreen(FullscreenMode mode, bool forceTopMost) {
             if (IsFullscreen) {
                 MoveToFullscreenMode(mode);
                 return;
             }
 
-            if (!_mainForm.ThumbnailPanel.IsShowingThumbnail)
+            bool hasSource = _mainForm.ThumbnailPanel.IsShowingThumbnail
+                          || _mainForm.CurrentSourceMode == MainForm.SourceMode.Image;
+            if (!hasSource)
                 return;
 
             //On switch, always hide side panels
@@ -50,7 +68,7 @@ namespace OnTopReplica {
             _mainForm.FormBorderStyle = FormBorderStyle.None;
             MoveToFullscreenMode(mode);
 
-            CommonCompleteSwitch(true);
+            CommonCompleteSwitch(true, forceTopMost);
         }
 
         private void MoveToFullscreenMode(FullscreenMode mode) {
@@ -92,13 +110,21 @@ namespace OnTopReplica {
             _mainForm.ClientSize = _preFullscreenSize;
             _mainForm.RefreshAspectRatio();
 
-            CommonCompleteSwitch(false);
+            CommonCompleteSwitch(false, false);
         }
 
-        private void CommonCompleteSwitch(bool enabled) {
+        private void CommonCompleteSwitch(bool enabled, bool forceTopMost) {
             //UI stuff switching
             _mainForm.GlassMargins = (!enabled) ? new Padding(-1) : Padding.Empty;
-            _mainForm.TopMost = !enabled;
+
+            //When entering fullscreen: TopMost stays true if user opted in OR caller forced it.
+            //When leaving: always restore TopMost (the normal app behavior).
+            if (enabled) {
+                _mainForm.TopMost = forceTopMost || Settings.Default.FullscreenAlwaysOnTop;
+            }
+            else {
+                _mainForm.TopMost = true;
+            }
 
             IsFullscreen = enabled;
 

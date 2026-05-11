@@ -16,16 +16,18 @@ namespace OnTopReplica {
                 return;
             }
 
-            bool showing = _thumbnailPanel.IsShowingThumbnail;
+            bool showingThumb = _thumbnailPanel.IsShowingThumbnail;
+            bool hasSource = showingThumb || CurrentSourceMode == SourceMode.Image;
 
-            selectRegionToolStripMenuItem.Enabled = showing;
-            switchToWindowToolStripMenuItem.Enabled = showing;
-            resizeToolStripMenuItem.Enabled = showing;
-            chromeToolStripMenuItem.Checked = IsChromeVisible;
+            selectRegionToolStripMenuItem.Enabled = showingThumb;
+            switchToWindowToolStripMenuItem.Enabled = showingThumb;
+            clickForwardingToolStripMenuItem.Enabled = showingThumb;
             clickForwardingToolStripMenuItem.Checked = ClickForwardingEnabled;
-            chromeToolStripMenuItem.Enabled = showing;
-            clickThroughToolStripMenuItem.Enabled = showing;
-            clickForwardingToolStripMenuItem.Enabled = showing;
+
+            resizeToolStripMenuItem.Enabled = hasSource;
+            chromeToolStripMenuItem.Enabled = hasSource;
+            chromeToolStripMenuItem.Checked = IsChromeVisible;
+            clickThroughToolStripMenuItem.Enabled = hasSource;
         }
 
         private void Menu_Switch_click(object sender, EventArgs e) {
@@ -87,7 +89,9 @@ namespace OnTopReplica {
         }
 
         private void Menu_Resize_opening(object sender, CancelEventArgs e) {
-            if (!_thumbnailPanel.IsShowingThumbnail)
+            bool hasSource = _thumbnailPanel.IsShowingThumbnail
+                          || CurrentSourceMode == SourceMode.Image;
+            if (!hasSource)
                 e.Cancel = true;
 
             restorePositionAndSizeToolStripMenuItem.Checked = Settings.Default.RestoreSizeAndPosition;

@@ -543,6 +543,48 @@
   <data name="MenuCtxScale" xml:space="preserve">
     <value>배율:</value>
   </data>
+  <data name="MenuLoadImage" xml:space="preserve">
+    <value>이미지 불러오기...</value>
+  </data>
+  <data name="MenuUnloadImage" xml:space="preserve">
+    <value>이미지 닫기</value>
+  </data>
+  <data name="MenuImagePresets" xml:space="preserve">
+    <value>이미지 프리셋...</value>
+  </data>
+  <data name="MenuFitMonitor" xml:space="preserve">
+    <value>모니터 전체 (작업 표시줄 포함)</value>
+  </data>
+  <data name="MenuFitImageSize" xml:space="preserve">
+    <value>이미지 원본 크기 (1:1)</value>
+  </data>
+  <data name="MenuPlacementMode" xml:space="preserve">
+    <value>배치 모드 (이미지 드래그)</value>
+  </data>
+  <data name="PresetApply" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="PresetDelete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="PresetAddCurrent" xml:space="preserve">
+    <value>현재 상태 추가</value>
+  </data>
+  <data name="PresetUpdate" xml:space="preserve">
+    <value>선택 항목 갱신</value>
+  </data>
+  <data name="PresetLoadFile" xml:space="preserve">
+    <value>이미지 파일 열기...</value>
+  </data>
+  <data name="PresetPromptTitle" xml:space="preserve">
+    <value>프리셋 이름</value>
+  </data>
+  <data name="PresetStatusSelectFirst" xml:space="preserve">
+    <value>프리셋을 먼저 선택하세요.</value>
+  </data>
+  <data name="PresetStatusNoImage" xml:space="preserve">
+    <value>로드된 이미지가 없습니다.</value>
+  </data>
   <data name="MenuRestoreLast" xml:space="preserve">
     <value>마지막으로 복제한 창 복원</value>
   </data>

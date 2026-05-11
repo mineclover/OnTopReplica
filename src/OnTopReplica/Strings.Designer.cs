@@ -1293,6 +1293,66 @@ namespace OnTopReplica {
             }
         }
 
+        internal static string MenuLoadImage {
+            get {
+                return ResourceManager.GetString("MenuLoadImage", resourceCulture);
+            }
+        }
+
+        internal static string MenuUnloadImage {
+            get {
+                return ResourceManager.GetString("MenuUnloadImage", resourceCulture);
+            }
+        }
+
+        internal static string MenuImagePresets {
+            get { return ResourceManager.GetString("MenuImagePresets", resourceCulture); }
+        }
+
+        internal static string MenuFitMonitor {
+            get { return ResourceManager.GetString("MenuFitMonitor", resourceCulture); }
+        }
+
+        internal static string MenuFitImageSize {
+            get { return ResourceManager.GetString("MenuFitImageSize", resourceCulture); }
+        }
+
+        internal static string MenuPlacementMode {
+            get { return ResourceManager.GetString("MenuPlacementMode", resourceCulture); }
+        }
+
+        internal static string PresetApply {
+            get { return ResourceManager.GetString("PresetApply", resourceCulture); }
+        }
+
+        internal static string PresetDelete {
+            get { return ResourceManager.GetString("PresetDelete", resourceCulture); }
+        }
+
+        internal static string PresetAddCurrent {
+            get { return ResourceManager.GetString("PresetAddCurrent", resourceCulture); }
+        }
+
+        internal static string PresetUpdate {
+            get { return ResourceManager.GetString("PresetUpdate", resourceCulture); }
+        }
+
+        internal static string PresetLoadFile {
+            get { return ResourceManager.GetString("PresetLoadFile", resourceCulture); }
+        }
+
+        internal static string PresetPromptTitle {
+            get { return ResourceManager.GetString("PresetPromptTitle", resourceCulture); }
+        }
+
+        internal static string PresetStatusSelectFirst {
+            get { return ResourceManager.GetString("PresetStatusSelectFirst", resourceCulture); }
+        }
+
+        internal static string PresetStatusNoImage {
+            get { return ResourceManager.GetString("PresetStatusNoImage", resourceCulture); }
+        }
+
         /// <summary>
         ///   查詢類似 Restore last cloned window 的當地語系化字串。
         /// </summary>
